@@ -3,9 +3,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: employee-management-backend
-    component: "backend"
-  name: employee-management-backend-deployment
+    app: employee-management-frontend
+    component: "frontend"
+  name: employee-management-frontend-deployment
   namespace: depauna
 spec:
   replicas: 1
@@ -18,14 +18,14 @@ spec:
   template:
     metadata:
       labels:
-        app: employee-management-backend
-        component: "backend"
+        app: employee-management-frontend
+        component: "frontend"
     spec:
       containers:
-        - name: employee-management-backend
-          image: depauna/spring-hello:latest
+        - name: employee-management-frontend
+          image: depauna/angular-hello:latest
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 4200
       restartPolicy: Always
