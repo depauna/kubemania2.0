@@ -1,0 +1,31 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: employee-management
+    component: "backend"
+  name: employee-management-deployment
+  namespace: depauna
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: employee-management
+        component: "backend"
+    spec:
+      containers:
+        - name: employee-management-backend
+          image: depauna/book-store:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+      restartPolicy: Always

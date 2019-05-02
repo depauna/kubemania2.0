@@ -1,0 +1,17 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/app-root: /
+  name: employee-management-ingress
+  namespace: depauna
+spec:
+  rules:
+    - host: ?
+      http:
+        paths:
+          - backend:
+              serviceName: employee-management-service
+              servicePort: 8080
+            path: /
