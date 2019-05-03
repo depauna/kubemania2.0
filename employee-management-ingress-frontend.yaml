@@ -12,6 +12,6 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: employee-management-backend-service
-              servicePort: 8080
+              serviceName: employee-management-frontend-service
+              servicePort: 4200
             path: /

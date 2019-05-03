@@ -5,13 +5,13 @@ metadata:
   labels:
     app: employee-management-frontend
     component: "frontend"
-  name: employee-management-service-frontend
+  name: employee-management-frontend-service
   namespace: depauna
 spec:
   ports:
     - port: 4200
       protocol: TCP
-      targetPort: http
+      targetPort: 4200
   selector:
     app: employee-management-frontend
     component: "frontend"
