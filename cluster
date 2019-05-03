@@ -1,0 +1,22 @@
+vim contrib/azurerm/group_vars/all
+
+./apply-rg.sh natan
+
+./generate-inventory.sh natan
+
+ssh natan@master-0
+ssh natan@master-1
+ssh natan@master-2
+ssh natan@minion-0
+ssh natan@minion-1
+ssh natan@minion-2
+
+sudo vim /etc/sudoers
+
+-> CHANGE:  Defaults    requiretty
+   TO:      Defaults    !requiretty
+
+ansible-playbook -i contrib/azurerm/inventory -u natan --become --become-user=root -e "@inventory/sample/group_vars/all/all.yml" cluster.yml
+OR
+ansible-playbook -i inventory/depauna/inventory.ini -u natan --become --become-user=root cluster.yml
+
