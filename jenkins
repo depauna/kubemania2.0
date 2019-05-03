@@ -1,0 +1,54 @@
+sudo yum -y update
+sudo yum install java-1.8.0-openjdk
+mkdir jenkins && cd jenkins
+wget https://updates.jenkins-ci.org/download/war/2.164.2/jenkins.war
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/java
+
+vim start.sh
+---
+#!/bin/bash
+
+rm -f nohup.out
+export PATH=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/:$PATH
+nohup /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/ -Xmx2g -XX:MaxPermSize=512m -jar jenkins.war &
+#
+
+vim stop.sh
+---
+#!/bin/bash
+
+kill $(ps aux | grep jenkins.war | grep -v grep | awk '{printf("%s ", $2); }')
+#
+
+
+install plugins:
+ - Blue Ocean
+ - Locale
+ - Role-based Authorization Strategy
+
+wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+
+"user1", "vKuMV5v5hAxh8D5n"
+"user2", "uPygTp5PBe7RYHqU"
+"user3", "HHZqZ78xaut8JrUC"
+"user4", "m8vPVZNVWLn4LB3C"
+"user5", "MJBU35bRG52x5rjq")
+"user6", "p3QtRyurB6YXhAhF"
+"user7", "QC3Fj24jLqNneRFC"
+"user8", "C2QUgejqcademsuJ"
+"user9", "cZNm3dj4QPVQB6Dy"
+"user10", "SbLe2Szuhhs79PLW"
+"user11", "KccS62RvSMwS2Ztq"
+"user12", "8AzN82tdTRUeZ4Nr"
+"user13", "5pjRKX2fwdS7MfrY"
+"user14", "AbyxHpHx7WUwy7Gj"
+"user15", "MSKDLkQKA8jYXszr"
+"user16", "5fKTZBAQafLN52vx"
+"user17", "AfWR8z3XGy75NsdU"
+"user18", "hh7gp3Y5tbYbeHUm"
+"user19", "LfALDt5H82qW9xhY"
+"user20", "6athPEYEdFcz6Bq5"
+
+
+sudo usermod -a -G docker natan
+
