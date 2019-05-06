@@ -30,4 +30,4 @@ spec:
               containerPort: 8080
       restartPolicy: Always
       securityContext:
-        runAsUser: 65534
+        runAsUser: 0
