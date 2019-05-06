@@ -1,3 +1,8 @@
+AZURE
+---
+
+INSTALL
+-
 vim contrib/azurerm/group_vars/all
 
 ./apply-rg.sh natan
@@ -19,4 +24,27 @@ sudo vim /etc/sudoers
 ansible-playbook -i contrib/azurerm/inventory -u natan --become --become-user=root -e "@inventory/sample/group_vars/all/all.yml" cluster.yml
 OR
 ansible-playbook -i inventory/depauna/inventory.ini -u natan --become --become-user=root cluster.yml
+
+----------
+AWS
+---
+
+INSTALL
+-
+terraform init
+
+terraform plan -var-file=credentials.tfvars -out=plan.tfplan
+terraform apply plan.tfplan
+
+ansible-playbook -i inventory/hosts cluster.yml -e ansible_ssh_private_key_file=$HOME/.ssh/id_rsa -e ansible_user=centos -v -b
+
+REMOVE
+-
+terraform destroy -var-file=credentials.tfvars
+
+INSTALL INGRESS
+-
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/aws/service-l4.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/aws/patch-configmap-l4.yaml
 

@@ -8,10 +8,10 @@ metadata:
   namespace: depauna
 spec:
   rules:
-    - host: kubernetes-elb-depauna-569195912.eu-west-1.elb.amazonaws.com
+    - host: 137.135.173.235
       http:
         paths:
           - backend:
               serviceName: employee-management-frontend-service
-              servicePort: 4200
+              servicePort: 80
             path: /

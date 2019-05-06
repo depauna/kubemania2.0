@@ -9,9 +9,10 @@ metadata:
   namespace: depauna
 spec:
   ports:
-    - port: 4200
+    - port: 80
       protocol: TCP
-      targetPort: 4200
+      targetPort: 80
+  type: NodePort
   selector:
     app: employee-management-frontend
     component: "frontend"
