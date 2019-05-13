@@ -6,7 +6,7 @@ metadata:
     app: employee-management-frontend
     component: "frontend"
   name: employee-management-frontend-deployment
-  namespace: depauna
+  namespace: <username>
 spec:
   replicas: 1
   strategy:
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: employee-management-frontend
-          image: depauna/angular-hello:latest
+          image: <dockerhub_username>/employee-management-angular:latest
           imagePullPolicy: Always
           ports:
             - name: http

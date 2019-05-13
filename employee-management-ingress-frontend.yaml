@@ -3,9 +3,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: employee-management-frontend-ingress
-  namespace: depauna
+  namespace: <username>
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /depaunafrontend
+    nginx.ingress.kubernetes.io/rewrite-target: /<username>frontend
 spec:
   rules:
     - host: kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com
@@ -14,4 +14,4 @@ spec:
           - backend:
               serviceName: employee-management-frontend-service
               servicePort: 80
-            path: /depaunafrontend
+            path: /<username>frontend

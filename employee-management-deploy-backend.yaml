@@ -6,7 +6,7 @@ metadata:
     app: employee-management-backend
     component: "backend"
   name: employee-management-backend-deployment
-  namespace: depauna
+  namespace: <username>
 spec:
   replicas: 1
   strategy:
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: employee-management-backend
-          image: depauna/spring-hello:latest
+          image: <dockerhub_username>/employee-management-spring:latest
           imagePullPolicy: Always
           ports:
             - name: http

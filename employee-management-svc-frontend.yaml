@@ -6,13 +6,13 @@ metadata:
     app: employee-management-frontend
     component: "frontend"
   name: employee-management-frontend-service
-  namespace: depauna
+  namespace: <username>
 spec:
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-  type: NodePort
+  type: ClusterIP
   selector:
     app: employee-management-frontend
     component: "frontend"

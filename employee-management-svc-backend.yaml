@@ -6,13 +6,13 @@ metadata:
     app: employee-management-backend
     component: "backend"
   name: employee-management-backend-service
-  namespace: depauna
+  namespace: <username>
 spec:
   ports:
     - port: 8080
       protocol: TCP
       targetPort: 8080
-  type: NodePort
+  type: ClusterIP
   selector:
     app: employee-management-backend
     component: "backend"
