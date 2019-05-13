@@ -4,12 +4,14 @@ kind: Ingress
 metadata:
   name: employee-management-backend-ingress
   namespace: depauna
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /depaunabackend
 spec:
   rules:
-    - host: 137.135.173.235
+    - host: http://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com
       http:
         paths:
           - backend:
               serviceName: employee-management-backend-service
               servicePort: 8080
-            path: /
+            path: /depaunabackend
