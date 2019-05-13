@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /depaunabackend
 spec:
   rules:
-    - host: http://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com
+    - host: kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com
       http:
         paths:
           - backend:
