@@ -18,17 +18,18 @@ chmod +x ./jq-linux64
 echo $PATH
 sudo mv ./jq-linux64 /usr/bin/jq
 
+# export the config
+export KUBECONFIG=/root/config
+rm -rf ~/kubemania
+mkdir ~/kubemania
+
 wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz
 tar -zxvf helm-v2.13.1-linux-amd64.tar.gz
 echo $PATH
 mv linux-amd64/helm /usr/bin/helm
 rm -rf helm-v2.13.1-linux-amd64.tar.gz
 rm -rf linux-amd64/
-
-# export the config
-export KUBECONFIG=/root/config
-rm -rf ~/kubemania
-mkdir ~/kubemania
+helm init
 
 for i in {1..15}{15..30}
 do
