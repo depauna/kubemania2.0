@@ -118,4 +118,6 @@ EOF
 
    chown -R "${USER}":"${USER}" /home/"${USER}"/
 
+   helm init --service-account "$USER" --tiller-namespace "$USER"
+
 done
