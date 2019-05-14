@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  name: ingress-dashboard
+  namespace: kube-system
+spec:
+  rules:
+    - host: kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com
+      http:
+        paths:
+          - backend:
+              serviceName: kubernetes-dashboard
+              servicePort: 443
+            path: /
+  tls:
+    - hosts:
+        - kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com
+      secretName: dashboard
