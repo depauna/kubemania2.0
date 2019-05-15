@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: <dockerhub_username>/employee-management-angular
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
