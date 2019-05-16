@@ -8,9 +8,11 @@ vim start.sh
 ---
 #!/bin/bash
 
-rm -f nohup.out
+#!/bin/bash
+
+rm -f /home/natan/jenkins/nohup.out
 export PATH=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/:$PATH
-nohup /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/ -Xmx2g -XX:MaxPermSize=512m -jar jenkins.war &
+nohup /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre/bin/java -Xmx2g -XX:MaxPermSize=512m -Duser.timezone="Europe/Brussels" -DsessionTimeout=540 -jar /home/natan/jenkins/jenkins.war > /home/natan/jenkins/nohup.out &
 #
 
 vim stop.sh
