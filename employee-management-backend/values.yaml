@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: <dockerhub_username>/employee-management-spring
+  repository: <dockerhub_username>/spring-hello
   tag: latest
   pullPolicy: Always
 

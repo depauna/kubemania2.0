@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: <dockerhub_username>/employee-management-angular
+  repository: <dockerhub_username>/angular-hello
   tag: latest
   pullPolicy: Always
 
