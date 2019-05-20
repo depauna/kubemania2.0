@@ -31,7 +31,7 @@ rm -rf helm-v2.13.1-linux-amd64.tar.gz
 rm -rf linux-amd64/
 helm init
 
-for i in {1..15}{15..30}
+for i in {1..14}{15..30}
 do
   USER=user${i}
 
