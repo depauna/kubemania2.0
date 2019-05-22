@@ -52,7 +52,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558079888592,
+  "iteration": 1558366876989,
   "links": [],
   "panels": [
     {
@@ -21146,7 +21146,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -21177,5 +21177,5 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "lR1OZnZWz",
-  "version": 3
+  "version": 4
 }

@@ -59,7 +59,7 @@
   "gnetId": 747,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558099815981,
+  "iteration": 1558099815991,
   "links": [],
   "panels": [
     {
@@ -1747,5 +1747,5 @@
   "timezone": "browser",
   "title": "Kubernetes Pod Metrics",
   "uid": "rR7TWnWWk",
-  "version": 5
+  "version": 6
 }
